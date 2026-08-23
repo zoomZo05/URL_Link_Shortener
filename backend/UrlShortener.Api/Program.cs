@@ -61,3 +61,5 @@ static IShortCodeGenerator CreateShortCodeGenerator(IServiceProvider serviceProv
     var options = serviceProvider.GetRequiredService<IOptions<ShortLinkOptions>>().Value;
     return new SecureShortCodeGenerator(options.CodeLength);
 }
+
+public partial class Program;
