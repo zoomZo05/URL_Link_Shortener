@@ -3,7 +3,7 @@
 URL shortener dashboard and API built with React, TypeScript, Vite, Tailwind CSS, .NET 8, and ASP.NET Core. The application runs locally as two processes:
 
 - Frontend: React/Vite dashboard at `http://localhost:5173`
-- Backend: ASP.NET Core API at `http://localhost:5000`
+- Backend: ASP.NET Core API at [https://gul.fy:5001](https://gul.fy:5001) or http://localhost:5000 (we use gul.fy to match the requirements).
 
 Links are stored in memory. Restarting the backend removes all links.
 
@@ -32,10 +32,10 @@ Use two terminals, both opened at the repository root.
 ### Terminal 1: Backend
 
 ```powershell
-dotnet run --project backend\UrlShortener.Api\UrlShortener.Api.csproj --urls http://localhost:5000
+dotnet run --project backend\UrlShortener.Api\UrlShortener.Api.csproj --launch-profile dev
 ```
 
-Keep this terminal running. The API is available at `http://localhost:5000`.
+Keep this terminal running. The API is available at `https://gul.fy:5001`.
 
 ### Terminal 2: Frontend
 
@@ -44,11 +44,11 @@ Set-Location frontend (cd frontend)
 npm run dev
 ```
 
-Open `http://localhost:5173` in a browser. The frontend uses `http://localhost:5000` as its default API URL. To use a different API URL, set `VITE_API_BASE_URL` before starting Vite:
+Open `http://localhost:5173` in a browser. The frontend uses `https://gul.fy:5001` as its default API URL. To use a different API URL, set `VITE_API_BASE_URL` before starting Vite:
 
 ```powershell
 Set-Location frontend (cd frontend)
-$env:VITE_API_BASE_URL = "http://localhost:5000"
+$env:VITE_API_BASE_URL = "https://gul.fy:5001"
 npm run dev
 ```
 
@@ -201,3 +201,5 @@ Backend configuration is in `backend/UrlShortener.Api/appsettings.json`:
 ## Persistence Decision
 
 If the application needs durable data, multi-instance deployment, or production use, replace the infrastructure implementation with a database-backed `IUrlRepository` and add migrations, connection-string configuration, and persistence/integration tests. The application and API layers are already separated from the storage implementation for that change.
+
+AI-log link - https://drive.google.com/file/d/1GBRyyGQ-vFwMUmzc0A_anPZH-IBUjYvD/view?usp=drive_link
