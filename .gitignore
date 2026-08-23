@@ -1,0 +1,28 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local environment and IDE files
+.env
+.env.*
+!.env.example
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local agent workspace
+.opencode/
+skills-lock.json
